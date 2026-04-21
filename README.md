@@ -11,3 +11,15 @@
 | Folder | Topics |
 |--------|--------|
 | `fundamentals` | ML basics, learning paradigms, preprocessing |
+
+
+---
+
+## 🚀 How to Run
+```bash
+git clone https://github.com/your-username/ml-techniques-core.git
+cd ml-techniques-core
+pip install -r requirements.txt
+jupyter notebook
+```
+
