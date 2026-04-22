@@ -17,10 +17,11 @@ Each topic has **2 files:**
 | `code.ipynb` | Hands-on implementation |
 
 ## 📁 Folder Structure
+```
 ml-techniques-core/
 ├── concepts/
 │   ├── fundamentals/
-
+```
 ## 🧠 Concepts Covered
 
 | Folder | Topics |
