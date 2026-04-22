@@ -38,3 +38,28 @@ Before building a model, you must **understand your data.**
 - Do two features move together?
 - Which features affect the target most?
 
+---
+
+## 📌 Key Terms
+| Term | Meaning | Example |
+|------|---------|---------|
+| Feature | Input column | Age, Weight |
+| Target | Output to predict | Disease (Yes/No) |
+| Outlier | Unusual value | Age = 999 |
+| Missing value | Empty cell | NaN |
+| Correlation | Relationship between features | Height & Weight |
+
+---
+
+## 💡 Why It Matters
+- Bad data → Bad model
+- Understanding data saves hours of debugging later
+- It guides which ML algorithm to choose
+
+---
+
+## ✅ Before Moving to Code
+Make sure you can answer:
+- [ ] What is a feature and a target?
+- [ ] What are missing values?
+- [ ] What does a correlation heatmap tell you?
