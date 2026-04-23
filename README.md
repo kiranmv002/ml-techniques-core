@@ -14,13 +14,14 @@ Each topic has **2 files:**
 | File | Purpose |
 |------|---------|
 | `theory.md` | Concept + Real life example |
-| `code.ipynb` | Hands-on implementation |
+| `code.py` | Hands-on Python implementation |
 
 ## 📁 Folder Structure
 ```
 ml-techniques-core/
 ├── concepts/
 │   ├── fundamentals/
+
 ```
 ## 🧠 Concepts Covered
 
@@ -32,10 +33,15 @@ ml-techniques-core/
 ## 🚀 How to Run
 
 ```bash
+# Clone the repo
 git clone https://github.com/kiranmv002/ml-techniques-core.git
 cd ml-techniques-core
+
+# Install dependencies
 pip install -r requirements.txt
-jupyter notebook
+
+# Run any script
+python concepts/fundamentals/01_exploring_data/code.py
 ```
 
 ## 👤 Author
