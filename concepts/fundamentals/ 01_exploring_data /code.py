@@ -83,3 +83,16 @@ plt.savefig("class_distribution.png")
 plt.show()
 print("✅ Class distribution saved!")
 
+
+# ── Step 8: Key Takeaways ────────────────────
+print("""
+==============================
+✅ KEY TAKEAWAYS
+==============================
+- Dataset  : 150 rows, 4 features, 3 classes
+- Missing  : No missing values found
+- Insight  : Petal length & width are highly correlated
+- Balance  : Classes are equal (50 each)
+- Rule     : Always explore data before any model!
+==============================
+""")
