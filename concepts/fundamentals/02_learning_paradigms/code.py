@@ -1,0 +1,58 @@
+# Learning Paradigms in Machine Learning
+# Author: M V Kiran
+# github.com/kiranmv002
+
+# I am going to show simple examples of all 3 paradigms
+
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.cluster import KMeans
+from sklearn.metrics import accuracy_score
+
+# load the iris dataset
+# this is a simple flower dataset with 3 types of flowers
+data = load_iris()
+X = data.data
+y = data.target
+
+print("Dataset loaded")
+print("Total samples:", len(X))
+print("Features:", data.feature_names)
+print("Classes:", data.target_names)
+
+
+# ── 1. Supervised Learning example ──────────
+# I am giving the model both X (features) and y (labels)
+# It learns from this and predicts new data
+
+print("\n--- Supervised Learning ---")
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+model = DecisionTreeClassifier()
+model.fit(X_train, y_train)
+
+predictions = model.predict(X_test)
+accuracy = accuracy_score(y_test, predictions)
+
+print("I trained a Decision Tree with labels")
+print("Accuracy:", round(accuracy * 100, 2), "%")
+
+
+# ── 2. Unsupervised Learning example ────────
+# I am giving only X, no labels
+# The model groups the data on its own
+
+print("\n--- Unsupervised Learning ---")
+
+kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
+kmeans.fit(X)
+
+print("I trained KMeans without any labels")
+print("Groups found:", np.unique(kmeans.labels_))
+print("First 10 group assignments:", kmeans.labels_[:10])
