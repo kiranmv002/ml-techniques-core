@@ -86,3 +86,18 @@ print("Final position:", position)
 print("Total reward:", total_reward)
 print("Agent learns to always move right to get more reward!")
 
+
+# ── Simple comparison plot ───────────────────
+labels = ["Supervised\n(with labels)", "Unsupervised\n(no labels)", "Reinforcement\n(trial & error)"]
+values = [3, 2, 1]
+colors = ["steelblue", "seagreen", "tomato"]
+
+plt.figure(figsize=(7, 4))
+plt.bar(labels, values, color=colors)
+plt.title("3 Learning Paradigms")
+plt.ylabel("Complexity Level")
+plt.tight_layout()
+plt.savefig("learning_paradigms.png")
+plt.show()
+
+print("\nDone! learning_paradigms.png saved")
