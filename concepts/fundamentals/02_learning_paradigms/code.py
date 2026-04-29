@@ -56,3 +56,33 @@ kmeans.fit(X)
 print("I trained KMeans without any labels")
 print("Groups found:", np.unique(kmeans.labels_))
 print("First 10 group assignments:", kmeans.labels_[:10])
+
+
+# ── 3. Reinforcement Learning ────────────────
+# I cannot show a full RL example easily
+# but here is the basic idea in simple code
+
+print("\n--- Reinforcement Learning (simple idea) ---")
+
+# imagine an agent trying to move right on a number line
+# it gets +1 reward for moving right, -1 for moving left
+
+position = 0
+total_reward = 0
+
+actions = ["right", "right", "left", "right", "right"]
+
+for action in actions:
+    if action == "right":
+        position += 1
+        total_reward += 1
+        print(f"Moved right → position: {position}, reward: +1")
+    else:
+        position -= 1
+        total_reward -= 1
+        print(f"Moved left  → position: {position}, reward: -1")
+
+print("Final position:", position)
+print("Total reward:", total_reward)
+print("Agent learns to always move right to get more reward!")
+
