@@ -40,3 +40,39 @@ into numbers.
 - Assigns a number to each category
 - Male = 0, Female = 1
 - Chennai = 0, Mumbai = 1, Delhi = 2
+
+#### One Hot Encoding
+- Creates a new column for each category
+- Better when categories have no order
+- Example:
+  - Chennai → [1, 0, 0]
+  - Mumbai  → [0, 1, 0]
+  - Delhi   → [0, 0, 1]
+
+---
+
+## 📌 Key Terms
+
+| Term | Meaning | Example |
+|------|---------|---------|
+| Feature | Input column | Age, City |
+| Numerical | Number data | 25, 5000 |
+| Categorical | Text/label data | Male, Chennai |
+| Label Encoding | Convert text to number | Male=0, Female=1 |
+| One Hot Encoding | Convert to 0s and 1s | Chennai=[1,0,0] |
+| Scaling | Bring numbers to same range | 0 to 1 |
+
+---
+
+## 💡 Why It Matters
+- ML models only understand numbers
+- Wrong encoding can confuse the model
+- Scaling helps model learn faster and better
+
+---
+
+## ✅ Check Yourself Before Code
+- [ ] What is the difference between numerical and categorical data?
+- [ ] When do you use label encoding vs one hot encoding?
+- [ ] Why do we need to scale data?
+- [ ] Can a ML model understand text directly?
