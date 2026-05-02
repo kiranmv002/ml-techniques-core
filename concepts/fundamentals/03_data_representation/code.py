@@ -59,3 +59,34 @@ print(city_dummies.head(6))
 
 # add to dataframe
 df = pd.concat([df, city_dummies], axis=1)
+
+
+# ── Step 4: Scaling ──────────────────────────
+# bringing all numbers to same range (0 to 1)
+# so one feature doesnt dominate others
+
+print("\n--- Scaling (MinMax) ---")
+
+scaler = MinMaxScaler()
+df["age_scaled"] = scaler.fit_transform(df[["age"]])
+df["study_hours_scaled"] = scaler.fit_transform(df[["study_hours"]])
+
+print("Age before scaling - min:", df["age"].min(), "max:", df["age"].max())
+print("Age after scaling  - min:", round(df["age_scaled"].min(), 2),
+      "max:", round(df["age_scaled"].max(), 2))
+
+print("\nStudy hours before - min:", df["study_hours"].min(),
+      "max:", df["study_hours"].max())
+print("Study hours after  - min:", round(df["study_hours_scaled"].min(), 2),
+      "max:", round(df["study_hours_scaled"].max(), 2))
+
+
+# ── Step 5: Visualize ────────────────────────
+fig, axes = plt.subplots(1, 3, figsize=(14, 4))
+
+# gender distribution
+df["gender"].value_counts().plot(kind="bar", ax=axes[0],
+                                  color=["steelblue", "salmon"])
+axes[0].set_title("Gender Distribution")
+axes[0].set_xlabel("Gender")
+axes[0].set_ylabel("Count")
