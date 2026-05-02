@@ -90,3 +90,33 @@ df["gender"].value_counts().plot(kind="bar", ax=axes[0],
 axes[0].set_title("Gender Distribution")
 axes[0].set_xlabel("Gender")
 axes[0].set_ylabel("Count")
+
+# city distribution
+df["city"].value_counts().plot(kind="bar", ax=axes[1], color="seagreen")
+axes[1].set_title("City Distribution")
+axes[1].set_xlabel("City")
+
+# study hours distribution
+axes[2].hist(df["study_hours"], bins=5, color="purple", alpha=0.7)
+axes[2].set_title("Study Hours Distribution")
+axes[2].set_xlabel("Study Hours")
+axes[2].set_ylabel("Count")
+
+plt.tight_layout()
+plt.savefig("data_representation.png")
+plt.show()
+print("Plot saved!")
+
+
+print("""
+==============================
+KEY TAKEAWAYS
+==============================
+- Numerical data  : Ready to use directly
+- Categorical data : Must convert to numbers
+- Label Encoding  : Good for 2-3 categories
+- One Hot Encoding: Good for many categories
+- Scaling         : Brings all values to 0-1 range
+- Dataset         : 30 student records
+==============================
+""")
