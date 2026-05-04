@@ -24,6 +24,7 @@ Each topic has **3 things:**
 ---
 
 ## 📁 Folder Structure
+```
 ml-techniques-core/
 │
 ├── concepts/
@@ -41,7 +42,7 @@ ml-techniques-core/
 │   │   │   ├── theory.md
 │   │   │   ├── code.py
 │   │   │   └── data/students.csv
-
+```
 ---
 
 ## 🧠 Concepts Covered
@@ -49,12 +50,6 @@ ml-techniques-core/
 | Folder | Topics | Status |
 |--------|--------|--------|
 | `fundamentals` | ML basics, learning paradigms, preprocessing | 🔄 In Progress |
-| `supervised_learning` | Regression, Decision Trees, Logistic Regression | ⏳ Coming Soon |
-| `advanced_classification` | KNN, SVM linear & non-linear | ⏳ Coming Soon |
-| `clustering_and_reduction` | K-Means, GMM, Dimensionality Reduction | ⏳ Coming Soon |
-| `ensemble_and_reinforcement` | Random Forest, AdaBoost, Q-Learning | ⏳ Coming Soon |
-| `probabilistic_learning` | Bayes, Naive Bayes, MLE | ⏳ Coming Soon |
-| `quantum_ml` | Quantum ML intro | ⏳ Coming Soon |
 
 ---
 
@@ -62,6 +57,7 @@ ml-techniques-core/
 
 ### fundamentals
 - [x] 01 - Exploring Data
+- [x] 02 - Learning Paradigms
 
 ---
 
