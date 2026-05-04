@@ -31,3 +31,28 @@ y = df["price"].values
 
 print("\nFeatures shape:", X.shape)
 print("Target shape:", y.shape)
+
+
+# ── 1. Linear Model Representation ──────────
+# model learns as an equation
+# price = w1*area + w2*rooms + w3*age + w4*location + bias
+
+print("\n--- Linear Model ---")
+
+linear_model = LinearRegression()
+linear_model.fit(X, y)
+
+print("Model learned these weights (parameters):")
+feature_names = ["area", "rooms", "age", "location"]
+for name, weight in zip(feature_names, linear_model.coef_):
+    print(f"  {name}: {round(weight, 2)}")
+print("Bias (intercept):", round(linear_model.intercept_, 2))
+
+# what the equation looks like
+print("\nModel equation:")
+print(f"Price = {round(linear_model.coef_[0],2)} x area"
+      f" + {round(linear_model.coef_[1],2)} x rooms"
+      f" + {round(linear_model.coef_[2],2)} x age"
+      f" + {round(linear_model.coef_[3],2)} x location"
+      f" + {round(linear_model.intercept_,2)}")
+
