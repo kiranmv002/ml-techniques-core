@@ -58,6 +58,9 @@ ml-techniques-core/
 ### fundamentals
 - [x] 01 - Exploring Data
 - [x] 02 - Learning Paradigms
+- [x] 03 - Data Representation
+- [ ] 04 - Model Representation
+
 
 ---
 
