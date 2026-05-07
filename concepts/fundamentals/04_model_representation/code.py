@@ -84,3 +84,37 @@ print("Predicted price:", round(predicted_tree[0], 2))
 
 # ── Visualization ────────────────────────────
 fig, axes = plt.subplots(1, 2, figsize=(12, 4))
+
+# linear model - actual vs predicted
+linear_preds = linear_model.predict(X)
+axes[0].scatter(y, linear_preds, color="steelblue", alpha=0.6)
+axes[0].plot([y.min(), y.max()], [y.min(), y.max()],
+             color="red", linestyle="--")
+axes[0].set_xlabel("Actual Price")
+axes[0].set_ylabel("Predicted Price")
+axes[0].set_title("Linear Model\nActual vs Predicted")
+
+# feature importance from tree
+importances = tree_model.feature_importances_
+axes[1].bar(feature_names, importances, color="seagreen")
+axes[1].set_xlabel("Features")
+axes[1].set_ylabel("Importance")
+axes[1].set_title("Decision Tree\nFeature Importance")
+
+plt.tight_layout()
+plt.savefig("model_representation.png")
+plt.show()
+print("Plot saved!")
+
+
+print("""
+==============================
+KEY TAKEAWAYS
+==============================
+- Linear model  : Stores learning as equation
+- Decision tree : Stores learning as yes/no questions
+- Parameters    : Values the model learns (weights)
+- Bias          : Base value before any feature
+- Area has the highest importance for house price
+==============================
+""")
