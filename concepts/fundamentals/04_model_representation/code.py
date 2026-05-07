@@ -56,3 +56,31 @@ print(f"Price = {round(linear_model.coef_[0],2)} x area"
       f" + {round(linear_model.coef_[3],2)} x location"
       f" + {round(linear_model.intercept_,2)}")
 
+# sample prediction
+sample = np.array([[1000, 3, 5, 0]])  # city house
+predicted = linear_model.predict(sample)
+print("\nPrediction for 1000sqft, 3 rooms, 5yr old, city house:")
+print("Predicted price:", round(predicted[0], 2))
+
+
+# ── 2. Decision Tree Representation ─────────
+# model learns as a series of yes/no questions
+# stores as a tree structure
+
+print("\n--- Decision Tree Model ---")
+
+tree_model = DecisionTreeRegressor(max_depth=3, random_state=42)
+tree_model.fit(X, y)
+
+print("Decision Tree structure (first 3 levels):")
+tree_rules = export_text(tree_model, feature_names=feature_names)
+print(tree_rules)
+
+# sample prediction
+predicted_tree = tree_model.predict(sample)
+print("Prediction for same house using Decision Tree:")
+print("Predicted price:", round(predicted_tree[0], 2))
+
+
+# ── Visualization ────────────────────────────
+fig, axes = plt.subplots(1, 2, figsize=(12, 4))
