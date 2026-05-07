@@ -43,3 +43,31 @@ some use trees, some use boundaries.
 - Stores learning as a line or curve that separates classes
 - Example: Everything above this line = Spam
 - Everything below = Not Spam
+
+---
+
+## 📌 Key Terms
+
+| Term | Meaning | Example |
+|------|---------|---------|
+| Model | What the algorithm learned | Equation, Tree |
+| Parameters | Values the model learned | Slope, intercept |
+| Weight | How important a feature is | Area has high weight |
+| Bias | Base value before features | Starting price |
+| Prediction | Output from the model | House price = 50000 |
+
+---
+
+## 💡 Why It Matters
+- Understanding model representation helps you
+  choose the right algorithm
+- It helps you explain predictions to others
+- It helps you debug when model gives wrong results
+
+---
+
+## ✅ Check Yourself Before Code
+- [ ] What is a parameter in a model?
+- [ ] How does a linear model represent learning?
+- [ ] How does a decision tree represent learning?
+- [ ] What is the difference between weight and bias?
