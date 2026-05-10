@@ -26,3 +26,47 @@ So we split data into 3 parts.
 
 ---
 
+## 🔑 The 3 Parts
+
+### 1. Training Set (60-70%)
+- Model learns from this data
+- Like studying from textbook
+- Largest portion of data
+
+### 2. Validation Set (10-20%)
+- Used to tune the model during training
+- Like practice tests
+- Helps avoid overfitting
+
+### 3. Test Set (10-20%)
+- Used only at the very end
+- Never seen by model during training
+- Like the final exam
+- Gives real performance score
+
+---
+
+## 📌 Key Terms
+
+| Term | Meaning | Example |
+|------|---------|---------|
+| Overfitting | Model memorized training data | 100% train, 50% test |
+| Underfitting | Model did not learn enough | 60% train, 58% test |
+| Good fit | Model learned well | 90% train, 88% test |
+| Cross validation | Split data multiple ways to test | K-Fold |
+
+---
+
+## 💡 Why It Matters
+- Without test set you dont know real performance
+- Without validation set model may overfit
+- Always split data before any preprocessing
+- Never use test set during training
+
+---
+
+## ✅ Check Yourself Before Code
+- [ ] What is the difference between validation and test set?
+- [ ] What is overfitting in simple words?
+- [ ] Why should test set never be seen during training?
+- [ ] What is a good train val test split ratio?
