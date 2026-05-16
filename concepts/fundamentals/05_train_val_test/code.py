@@ -80,3 +80,67 @@ test_r2 = r2_score(y_test2, test_preds)
 
 print("\nTest MAE:", round(test_mae, 2))
 print("Test R2 :", round(test_r2, 2))
+
+
+# ── Step 4: Cross Validation ─────────────────
+# splits data multiple ways and tests each time
+# gives more reliable performance estimate
+
+print("\n--- Cross Validation (5 Fold) ---")
+
+kfold = KFold(n_splits=5, shuffle=True, random_state=42)
+cv_scores = cross_val_score(LinearRegression(), X, y,
+                             cv=kfold, scoring="r2")
+
+print("R2 scores for each fold:", np.round(cv_scores, 2))
+print("Average R2            :", round(cv_scores.mean(), 2))
+print("Standard deviation    :", round(cv_scores.std(), 2))
+
+
+# ── Visualization ────────────────────────────
+fig, axes = plt.subplots(1, 3, figsize=(14, 4))
+
+# data split visualization
+sizes = [len(X_train2), len(X_val), len(X_test2)]
+labels = ["Train\n70%", "Validation\n15%", "Test\n15%"]
+colors = ["steelblue", "seagreen", "tomato"]
+axes[0].pie(sizes, labels=labels, colors=colors,
+            autopct="%1.0f%%", startangle=90)
+axes[0].set_title("Data Split")
+
+# actual vs predicted on test set
+axes[1].scatter(y_test2, test_preds, color="steelblue", alpha=0.7)
+axes[1].plot([y_test2.min(), y_test2.max()],
+             [y_test2.min(), y_test2.max()],
+             color="red", linestyle="--")
+axes[1].set_xlabel("Actual Score")
+axes[1].set_ylabel("Predicted Score")
+axes[1].set_title("Actual vs Predicted\n(Test Set)")
+
+# cross validation scores
+axes[2].bar([f"Fold {i+1}" for i in range(5)],
+            cv_scores, color="purple", alpha=0.7)
+axes[2].axhline(y=cv_scores.mean(), color="red",
+                linestyle="--", label="Average")
+axes[2].set_xlabel("Fold")
+axes[2].set_ylabel("R2 Score")
+axes[2].set_title("Cross Validation Scores")
+axes[2].legend()
+
+plt.tight_layout()
+plt.savefig("train_val_test.png")
+plt.show()
+print("Plot saved!")
+
+
+print("""
+==============================
+KEY TAKEAWAYS
+==============================
+- Train set     : Model learns from this (70%)
+- Validation    : Tune model during training (15%)
+- Test set      : Final check only at the end (15%)
+- Cross val     : More reliable than single split
+- Never use test set during training!
+==============================
+""")
