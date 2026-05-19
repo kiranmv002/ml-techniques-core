@@ -61,7 +61,7 @@ ml-techniques-core/
 - [x] 03 - Data Representation
 - [x] 04 - Model Representation
 - [x] 05 - Train Val Test
-
+- [x] 06 - Data Preprocessing
 ---
 
 ## 🚀 How to Run
