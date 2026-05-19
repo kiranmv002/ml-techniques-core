@@ -60,7 +60,7 @@ ml-techniques-core/
 - [x] 02 - Learning Paradigms
 - [x] 03 - Data Representation
 - [x] 04 - Model Representation
-
+- [x] 05 - Train Val Test
 
 ---
 
