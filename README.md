@@ -45,7 +45,11 @@ ml-techniques-core/
 |   |   ├── 04_model_representation/
 │   │   │   ├── theory.md
 │   │   │   ├── code.py
-│   │   │   └── data/ house_prices.csv
+│   │   │   └── data/house_prices.csv
+|   |   ├── 05_train_val_test/
+│   │   │   ├── theory.md
+│   │   │   ├── code.py
+│   │   │   └── data/exam_scores.csv
 
 ```
 ---
