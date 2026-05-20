@@ -69,3 +69,40 @@ y_clf = iris.target
 X_train2, X_test2, y_train2, y_test2 = train_test_split(
     X_clf, y_clf, test_size=0.2, random_state=42
 )
+
+clf_model = LogisticRegression(max_iter=200)
+clf_model.fit(X_train2, y_train2)
+clf_preds = clf_model.predict(X_test2)
+
+print("\nClassification Results:")
+print("Accuracy:", round(accuracy_score(y_test2, clf_preds) * 100, 2), "%")
+
+
+# ── Problem Formulation Template ─────────────
+print("\n--- Problem Formulation Template ---")
+
+template = {
+    "What to predict"  : "Disease progression score",
+    "Input features"   : "Age, BMI, Blood pressure",
+    "Problem type"     : "Regression",
+    "Success metric"   : "MAE < 50, R2 > 0.5",
+    "Data available"   : "442 patient records",
+    "Constraints"      : "Model must be explainable"
+}
+
+for key, value in template.items():
+    print(f"{key:20}: {value}")
+
+
+# ── Visualization ────────────────────────────
+fig, axes = plt.subplots(1, 3, figsize=(14, 4))
+
+# problem types distribution
+problem_counts = df["problem_type"].value_counts()
+axes[0].bar(problem_counts.index, problem_counts.values,
+            color=["steelblue", "seagreen", "tomato"])
+axes[0].set_title("Problem Types")
+axes[0].set_xlabel("Type")
+axes[0].set_ylabel("Count")
+
+# regression actual vs predicted
