@@ -106,3 +106,39 @@ axes[0].set_xlabel("Type")
 axes[0].set_ylabel("Count")
 
 # regression actual vs predicted
+axes[1].scatter(y_test, reg_preds, color="steelblue", alpha=0.6)
+axes[1].plot([y_test.min(), y_test.max()],
+             [y_test.min(), y_test.max()],
+             color="red", linestyle="--")
+axes[1].set_title("Regression Problem\nActual vs Predicted")
+axes[1].set_xlabel("Actual")
+axes[1].set_ylabel("Predicted")
+
+# classification results
+class_names = iris.target_names
+correct = np.sum(clf_preds == y_test2)
+wrong = len(y_test2) - correct
+axes[2].bar(["Correct", "Wrong"],
+            [correct, wrong],
+            color=["seagreen", "tomato"])
+axes[2].set_title("Classification Problem\nPrediction Results")
+axes[2].set_ylabel("Count")
+
+plt.tight_layout()
+plt.savefig("problem_formulation.png")
+plt.show()
+print("\nPlot saved!")
+
+
+print("""
+==============================
+KEY TAKEAWAYS
+==============================
+- Define problem clearly before coding
+- Predict a number    → Regression
+- Predict a category  → Classification
+- Find groups         → Clustering
+- Choose metric based on problem type
+- Always ask: what data do I have?
+==============================
+""")
