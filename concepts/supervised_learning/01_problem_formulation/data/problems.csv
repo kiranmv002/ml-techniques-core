@@ -1,0 +1,16 @@
+problem_id,description,input_features,target,problem_type,metric
+1,Predict house price,area and rooms and age,price in rupees,regression,RMSE
+2,Detect email spam,email text and sender,spam or not spam,binary_classification,accuracy
+3,Predict student grade,study hours and attendance,A B C D or F,multi_classification,accuracy
+4,Group customers,purchase history and age,customer segment,clustering,silhouette score
+5,Predict diabetes,glucose and bmi and age,diabetic or not,binary_classification,recall
+6,Predict sales,month and season and ads,sales amount,regression,MAE
+7,Detect fraud,transaction amount and location,fraud or not,binary_classification,precision
+8,Classify news,news text and source,sports politics tech,multi_classification,f1 score
+9,Predict salary,experience and skills and role,salary amount,regression,R2
+10,Segment products,price and category and ratings,product group,clustering,silhouette score
+11,Predict churn,usage and complaints and plan,churn or not,binary_classification,recall
+12,Forecast demand,past sales and holidays,units demanded,regression,RMSE
+13,Classify disease,symptoms and test results,disease type,multi_classification,f1 score
+14,Detect anomaly,server logs and traffic,normal or anomaly,binary_classification,precision
+15,Predict rating,review text and user history,1 to 5 stars,regression,MAE
