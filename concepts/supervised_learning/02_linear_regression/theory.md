@@ -38,3 +38,31 @@ and actual values.
 ### How Error is Measured
 Mean Squared Error (MSE) = average of (actual - predicted)²
 The model tries to make this as small as possible.
+
+---
+
+## 📌 Key Terms
+
+| Term | Meaning | Example |
+|------|---------|---------|
+| Slope | How steep the line is | Price increases 50 per sqft |
+| Intercept | Where line crosses y axis | Base price = 10000 |
+| MSE | Average squared error | How wrong predictions are |
+| R2 Score | How well line fits data | 0.9 means 90% fit |
+| Residual | Difference between actual and predicted | Actual 50000 - Predicted 48000 = 2000 |
+
+---
+
+## 💡 Why It Matters
+- Simplest and most interpretable model
+- Good starting point for any regression problem
+- Fast to train even on large datasets
+- Easy to explain to non technical people
+
+---
+
+## ✅ Check Yourself Before Code
+- [ ] What does the slope tell you in linear regression?
+- [ ] What is MSE and why do we minimize it?
+- [ ] What does R2 score of 0.9 mean?
+- [ ] When would linear regression fail?
