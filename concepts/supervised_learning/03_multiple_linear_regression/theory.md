@@ -52,3 +52,19 @@ the prediction more.
 | Multicollinearity | Two features are too similar | Height and weight |
 | Adjusted R2 | R2 adjusted for number of features | Better than R2 for multiple features |
 | Feature selection | Choosing best features | Remove useless columns |
+
+---
+
+## 💡 Why It Matters
+- Real world problems always have many features
+- More relevant features usually means better predictions
+- But too many useless features can hurt the model
+- Feature selection is key to a good model
+
+---
+
+## ✅ Check Yourself Before Code
+- [ ] How is multiple different from simple linear regression?
+- [ ] What does a negative weight mean?
+- [ ] Why is adjusted R2 better than R2 for multiple features?
+- [ ] What is multicollinearity and why is it a problem?
