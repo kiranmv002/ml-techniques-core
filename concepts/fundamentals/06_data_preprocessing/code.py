@@ -53,3 +53,50 @@ df["age"] = df["age"].apply(
 )
 
 print("Outliers replaced with median age:", median_age)
+
+
+# ── Step 4: Handle Missing Values ────────────
+print("\n--- Handling Missing Values ---")
+
+# fill missing age with median
+df["age"] = df["age"].fillna(df["age"].median())
+print("Missing age filled with median:", df["age"].median())
+
+# fill missing gender with most common value
+most_common_gender = df["gender"].mode()[0]
+df["gender"] = df["gender"].fillna(most_common_gender)
+print("Missing gender filled with:", most_common_gender)
+
+print("\nMissing values after fixing:")
+print(df.isnull().sum())
+
+
+# ── Step 5: Encode Categorical Data ──────────
+print("\n--- Encoding Categorical Data ---")
+
+le = LabelEncoder()
+df["gender_encoded"] = le.fit_transform(df["gender"])
+print("Gender encoding:", dict(zip(le.classes_, le.transform(le.classes_))))
+
+
+# ── Step 6: Scale Features ───────────────────
+print("\n--- Scaling Features ---")
+
+# min max scaling - brings to 0 to 1 range
+minmax = MinMaxScaler()
+df["age_minmax"] = minmax.fit_transform(df[["age"]])
+df["bp_minmax"] = minmax.fit_transform(df[["blood_pressure"]])
+
+# standard scaling - mean 0 std 1
+standard = StandardScaler()
+df["age_standard"] = standard.fit_transform(df[["age"]])
+df["bp_standard"] = standard.fit_transform(df[["blood_pressure"]])
+
+print("Age min-max range:",
+      round(df["age_minmax"].min(), 2), "to",
+      round(df["age_minmax"].max(), 2))
+print("Age standard mean:",
+      round(df["age_standard"].mean(), 2),
+      "std:", round(df["age_standard"].std(), 2))
+
+
