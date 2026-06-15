@@ -47,3 +47,29 @@ from the training data.
 - This is what we always aim for
 
 ---
+
+## 📌 Key Terms
+
+| Term | Meaning | Example |
+|------|---------|---------|
+| Bias | Error from wrong assumptions | Too simple model |
+| Variance | Sensitivity to training data | Too complex model |
+| Regularization | Penalty to reduce overfitting | L1 L2 |
+| Cross validation | Test on multiple splits | K fold |
+| Learning curve | Train vs val error over data size | Diagnosis tool |
+
+---
+
+## 💡 Why It Matters
+- Overfitting is the most common ML mistake
+- A model that only works on training data is useless
+- Always compare training and test performance
+- Big gap between train and test = overfitting
+
+---
+
+## ✅ Check Yourself Before Code
+- [ ] What is the difference between overfitting and underfitting?
+- [ ] How do you detect overfitting?
+- [ ] What is regularization in simple words?
+- [ ] What does high bias mean?
