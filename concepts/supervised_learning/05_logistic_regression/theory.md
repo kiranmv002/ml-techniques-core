@@ -43,3 +43,31 @@ If probability >= 0.5 → predict class 1
 If probability < 0.5  → predict class 0
 
 ---
+
+## 📌 Key Terms
+
+| Term | Meaning | Example |
+|------|---------|---------|
+| Sigmoid | Function that converts to 0-1 | 0.8 means 80% chance |
+| Threshold | Decision boundary | Default is 0.5 |
+| Precision | Of all predicted yes how many are correct | 90% |
+| Recall | Of all actual yes how many did we catch | 85% |
+| F1 Score | Balance of precision and recall | 87% |
+| Confusion Matrix | Table of correct and wrong predictions | TP FP TN FN |
+
+---
+
+## 💡 Why It Matters
+- Most common classification algorithm
+- Gives probability not just class label
+- Easy to interpret and explain
+- Works well when classes are linearly separable
+- Fast to train even on large datasets
+
+---
+
+## ✅ Check Yourself Before Code
+- [ ] Why is logistic regression a classification algorithm?
+- [ ] What does the sigmoid function do?
+- [ ] What is the difference between precision and recall?
+- [ ] When would you lower the threshold below 0.5?
