@@ -50,6 +50,11 @@ ml-techniques-core/
 │   │   │   ├── theory.md
 │   │   │   ├── code.py
 │   │   │   └── data/exam_scores.csv
+|   |   ├── 06_data_preprocessing/
+│   │   │   ├── theory.md
+│   │   │   ├── code.py
+│   │   │   
+
 
 ```
 ---
