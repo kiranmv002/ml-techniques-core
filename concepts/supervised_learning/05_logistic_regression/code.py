@@ -84,3 +84,29 @@ print(classification_report(y_test, y_pred,
       target_names=["Not Diabetic", "Diabetic"]))
 
 
+# ── Step 5: Feature Importance ───────────────
+print("\n--- Feature Importance ---")
+for name, coef in zip(feature_names, model.coef_[0]):
+    print(f"  {name:20}: {round(coef, 3)}")
+
+
+# ── Step 6: Sample Prediction ────────────────
+print("\n--- Sample Prediction ---")
+
+new_patient = pd.DataFrame({
+    "glucose"        : [148],
+    "bmi"            : [33.6],
+    "age"            : [50],
+    "blood_pressure" : [72],
+    "insulin"        : [0],
+    "skin_thickness" : [35],
+    "pregnancies"    : [6]
+})
+
+new_scaled = scaler.transform(new_patient)
+prob = model.predict_proba(new_scaled)[0][1]
+pred = model.predict(new_scaled)[0]
+
+print("Patient: glucose=148, bmi=33.6, age=50")
+print(f"Probability of diabetes: {round(prob * 100, 2)}%")
+print(f"Prediction: {'Diabetic ⚠️' if pred == 1 else 'Not Diabetic ✅'}")
