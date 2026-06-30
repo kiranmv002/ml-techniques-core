@@ -51,3 +51,36 @@ model = LogisticRegression(random_state=42, max_iter=1000)
 model.fit(X_train_scaled, y_train)
 
 print("Model trained!")
+
+
+# ── Step 3: Predictions ──────────────────────
+print("\n--- Predictions ---")
+
+y_pred = model.predict(X_test_scaled)
+y_prob = model.predict_proba(X_test_scaled)[:, 1]
+
+print("First 10 predictions:")
+for i in range(10):
+    print(f"  Patient {i+1}: probability={round(y_prob[i], 2)}"
+          f"  predicted={'Diabetic' if y_pred[i]==1 else 'Not Diabetic'}"
+          f"  actual={'Diabetic' if y_test[i]==1 else 'Not Diabetic'}")
+
+
+# ── Step 4: Evaluate Model ───────────────────
+print("\n--- Model Evaluation ---")
+
+accuracy  = accuracy_score(y_test, y_pred)
+precision = precision_score(y_test, y_pred, zero_division=0)
+recall    = recall_score(y_test, y_pred, zero_division=0)
+f1        = f1_score(y_test, y_pred, zero_division=0)
+
+print(f"Accuracy : {round(accuracy  * 100, 2)}%")
+print(f"Precision: {round(precision * 100, 2)}%")
+print(f"Recall   : {round(recall    * 100, 2)}%")
+print(f"F1 Score : {round(f1        * 100, 2)}%")
+
+print("\nClassification Report:")
+print(classification_report(y_test, y_pred,
+      target_names=["Not Diabetic", "Diabetic"]))
+
+
