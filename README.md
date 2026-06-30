@@ -53,7 +53,7 @@ ml-techniques-core/
 |   |   ├── 06_data_preprocessing/
 │   │   │   ├── theory.md
 │   │   │   ├── code.py
-│   │   │   
+│   │   │   └── data/raw_patients.csv
 
 
 ```
