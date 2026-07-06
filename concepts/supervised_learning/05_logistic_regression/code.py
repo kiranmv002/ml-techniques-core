@@ -110,3 +110,65 @@ pred = model.predict(new_scaled)[0]
 print("Patient: glucose=148, bmi=33.6, age=50")
 print(f"Probability of diabetes: {round(prob * 100, 2)}%")
 print(f"Prediction: {'Diabetic ⚠️' if pred == 1 else 'Not Diabetic ✅'}")
+
+
+# ── Visualization ─────────────────────────────
+fig, axes = plt.subplots(1, 3, figsize=(14, 4))
+
+# confusion matrix
+cm = confusion_matrix(y_test, y_pred)
+im = axes[0].imshow(cm, cmap="Blues")
+axes[0].set_xticks([0, 1])
+axes[0].set_yticks([0, 1])
+axes[0].set_xticklabels(["Not Diabetic", "Diabetic"])
+axes[0].set_yticklabels(["Not Diabetic", "Diabetic"])
+axes[0].set_xlabel("Predicted")
+axes[0].set_ylabel("Actual")
+axes[0].set_title("Confusion Matrix")
+for i in range(2):
+    for j in range(2):
+        axes[0].text(j, i, cm[i, j], ha="center",
+                     va="center", fontsize=14, color="black")
+
+# probability distribution
+diabetic_probs = y_prob[y_test == 1]
+not_diabetic_probs = y_prob[y_test == 0]
+axes[1].hist(not_diabetic_probs, bins=8, alpha=0.6,
+             color="steelblue", label="Not Diabetic")
+axes[1].hist(diabetic_probs, bins=8, alpha=0.6,
+             color="tomato", label="Diabetic")
+axes[1].axvline(x=0.5, color="black",
+                linestyle="--", label="Threshold 0.5")
+axes[1].set_xlabel("Predicted Probability")
+axes[1].set_ylabel("Count")
+axes[1].set_title("Probability Distribution")
+axes[1].legend()
+
+# feature importance
+coefs = model.coef_[0]
+colors = ["seagreen" if c > 0 else "tomato" for c in coefs]
+axes[2].barh(feature_names, coefs, color=colors)
+axes[2].axvline(x=0, color="black", linestyle="--")
+axes[2].set_xlabel("Coefficient")
+axes[2].set_title("Feature Importance\n(Green=Increases Risk)")
+
+plt.tight_layout()
+plt.savefig("logistic_regression.png")
+plt.show()
+print("\nPlot saved!")
+
+
+print("""
+==============================
+KEY TAKEAWAYS
+==============================
+- Logistic regression predicts probability
+- Output is always between 0 and 1
+- Default threshold is 0.5
+- Accuracy  : overall correctness
+- Precision : when we say yes how often right
+- Recall    : how many actual yes did we catch
+- F1 Score  : balance of precision and recall
+- Glucose and BMI are top risk factors
+==============================
+""")
