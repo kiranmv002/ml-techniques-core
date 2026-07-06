@@ -25,3 +25,25 @@ branches down until it reaches a final answer.
 > Each question splits the data into two groups.
 > At the end you get a final decision.
 
+---
+
+## 🔑 How it Works
+
+### Step 1 - Find Best Question
+The tree finds the question that best separates
+the data into groups. It uses Gini impurity or
+entropy to measure how pure each split is.
+
+### Step 2 - Split Data
+Data is split into two groups based on the answer.
+Yes goes left. No goes right.
+
+### Step 3 - Repeat
+For each group the tree asks another best question.
+This continues until a stopping condition is met.
+
+### Step 4 - Make Prediction
+New data travels down the tree answering questions
+until it reaches a leaf node which gives the prediction.
+
+---
