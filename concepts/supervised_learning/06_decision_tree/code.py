@@ -83,3 +83,22 @@ best_depth = depths[np.argmax(test_accs)]
 print("Best depth:", best_depth)
 print("Best test accuracy:", round(max(test_accs) * 100, 2), "%")
 
+
+# ── Step 5: Best Model Evaluation ────────────
+print("\n--- Best Model Evaluation ---")
+
+best_tree = DecisionTreeClassifier(max_depth=best_depth, random_state=42)
+best_tree.fit(X_train, y_train)
+best_preds = best_tree.predict(X_test)
+
+print(classification_report(y_test, best_preds,
+      target_names=["Rejected", "Approved"]))
+
+
+# ── Step 6: Feature Importance ───────────────
+print("\n--- Feature Importance ---")
+importances = best_tree.feature_importances_
+for name, imp in zip(feature_names, importances):
+    print(f"  {name:20}: {round(imp, 3)}")
+
+
