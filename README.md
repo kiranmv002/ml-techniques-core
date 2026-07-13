@@ -21,8 +21,10 @@ Each topic has **3 things:**
 | `data/` | Dataset used in the code |
 
 ---
-```
+
 ## 📁 Folder Structure
+
+```
 ml-techniques-core/
 │
 ├── concepts/
@@ -83,6 +85,8 @@ ml-techniques-core/
 
 ### supervised_learning
 - [x] 01 - Problem Formulation
+- [x] 02 - Linear Regression
+- [x] 03 - Multiple Linear Regression
 
 ---
 
