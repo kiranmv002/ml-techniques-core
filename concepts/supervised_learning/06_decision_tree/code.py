@@ -143,3 +143,37 @@ axes[1].barh(feature_names, importances,
 axes[1].set_xlabel("Importance")
 axes[1].set_title("Feature Importance")
 
+# confusion matrix
+cm = confusion_matrix(y_test, best_preds)
+axes[2].imshow(cm, cmap="Blues")
+axes[2].set_xticks([0, 1])
+axes[2].set_yticks([0, 1])
+axes[2].set_xticklabels(["Rejected", "Approved"])
+axes[2].set_yticklabels(["Rejected", "Approved"])
+axes[2].set_xlabel("Predicted")
+axes[2].set_ylabel("Actual")
+axes[2].set_title("Confusion Matrix")
+for i in range(2):
+    for j in range(2):
+        axes[2].text(j, i, cm[i, j], ha="center",
+                     va="center", fontsize=14)
+
+plt.tight_layout()
+plt.savefig("decision_tree.png")
+plt.show()
+print("\nPlot saved!")
+
+
+print("""
+==============================
+KEY TAKEAWAYS
+==============================
+- Decision tree asks yes or no questions
+- Each question splits data into two groups
+- Deeper tree = more complex = more overfit
+- Always find the best depth using test accuracy
+- Credit score and income are top features
+- No need to scale features for decision tree
+- Easy to visualize and explain to anyone
+==============================
+""")
