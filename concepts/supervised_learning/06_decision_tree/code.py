@@ -102,3 +102,25 @@ for name, imp in zip(feature_names, importances):
     print(f"  {name:20}: {round(imp, 3)}")
 
 
+# ── Step 7: Sample Prediction ────────────────
+print("\n--- Sample Prediction ---")
+
+new_applicant = pd.DataFrame({
+    "age"              : [35],
+    "income"           : [65000],
+    "credit_score"     : [740],
+    "employment_years" : [8],
+    "existing_loans"   : [0],
+    "loan_amount"      : [250000]
+})
+
+pred = best_tree.predict(new_applicant)[0]
+prob = best_tree.predict_proba(new_applicant)[0]
+
+print("Applicant: age=35, income=65000, credit=740")
+print(f"Approval probability: {round(prob[1] * 100, 2)}%")
+print(f"Decision: {'Approved ✅' if pred == 1 else 'Rejected ❌'}")
+
+
+# ── Visualization ─────────────────────────────
+fig, axes = plt.subplots(1, 3, figsize=(16, 4))
