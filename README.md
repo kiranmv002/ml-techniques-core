@@ -21,7 +21,7 @@ Each topic has **3 things:**
 | `data/` | Dataset used in the code |
 
 ---
-
+```
 ## 📁 Folder Structure
 ml-techniques-core/
 │
@@ -59,7 +59,7 @@ ml-techniques-core/
 │   │   │   ├── code.py
 │   │   │   └── data/problems.csv
 
-
+```
 ---
 
 ## 🧠 Concepts Covered
@@ -67,7 +67,7 @@ ml-techniques-core/
 | Folder | Topics | Status |
 |--------|--------|--------|
 | `fundamentals` | ML basics, learning paradigms, preprocessing | ✅ Done |
-
+| `supervised_learning` | Regression, Decision Trees, Logistic Regression | 🔄 In Progress |
 
 ---
 
