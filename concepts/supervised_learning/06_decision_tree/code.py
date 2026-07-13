@@ -124,3 +124,22 @@ print(f"Decision: {'Approved ✅' if pred == 1 else 'Rejected ❌'}")
 
 # ── Visualization ─────────────────────────────
 fig, axes = plt.subplots(1, 3, figsize=(16, 4))
+
+# depth vs accuracy
+axes[0].plot(depths, train_accs, label="Train",
+             color="steelblue", marker="o")
+axes[0].plot(depths, test_accs, label="Test",
+             color="tomato", marker="s")
+axes[0].axvline(x=best_depth, color="green",
+                linestyle="--", label=f"Best={best_depth}")
+axes[0].set_xlabel("Tree Depth")
+axes[0].set_ylabel("Accuracy")
+axes[0].set_title("Depth vs Accuracy")
+axes[0].legend()
+
+# feature importance
+axes[1].barh(feature_names, importances,
+             color="seagreen", alpha=0.8)
+axes[1].set_xlabel("Importance")
+axes[1].set_title("Feature Importance")
+
