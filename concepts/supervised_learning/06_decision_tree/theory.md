@@ -47,3 +47,31 @@ New data travels down the tree answering questions
 until it reaches a leaf node which gives the prediction.
 
 ---
+
+## 📌 Key Terms
+
+| Term | Meaning | Example |
+|------|---------|---------|
+| Root node | First question at top | Is income > 50000 |
+| Branch | Path after answering yes or no | Yes path |
+| Leaf node | Final answer at bottom | Approve or Reject |
+| Depth | How many levels the tree has | Depth 3 |
+| Gini impurity | How mixed a group is | 0 = pure 1 = mixed |
+| Pruning | Cutting tree to avoid overfit | Remove deep branches |
+
+---
+
+## 💡 Why It Matters
+- Easy to understand and visualize
+- No need to scale features
+- Works for both classification and regression
+- Can handle missing values
+- But deep trees overfit easily
+
+---
+
+## ✅ Check Yourself Before Code
+- [ ] What is a root node and leaf node?
+- [ ] What is Gini impurity?
+- [ ] Why does a very deep tree overfit?
+- [ ] What is pruning and why do we do it?
