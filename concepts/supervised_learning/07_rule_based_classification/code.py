@@ -54,3 +54,36 @@ print("Rule 2: IF weather=rainy AND wind>20 THEN dont play")
 print("Rule 3: IF weather=cloudy THEN play")
 print("Rule 4: IF weather=rainy AND wind<=20 THEN play")
 print("Rule 5: ELSE dont play")
+
+
+# ── Step 2: Encode for ML Model ──────────────
+le_weather = LabelEncoder()
+le_temp = LabelEncoder()
+
+df["weather_enc"] = le_weather.fit_transform(df["weather"])
+df["temp_enc"] = le_temp.fit_transform(df["temperature"])
+
+feature_names = ["weather_enc", "temp_enc",
+                 "humidity", "wind_speed"]
+
+X = df[feature_names].values
+y = df["play"].values
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+
+# ── Step 3: Learn Rules from Decision Tree ───
+print("\n--- Learned Rules from Decision Tree ---")
+
+tree = DecisionTreeClassifier(max_depth=4, random_state=42)
+tree.fit(X_train, y_train)
+
+tree_preds = tree.predict(X_test)
+tree_acc = accuracy_score(y_test, tree_preds)
+print("Decision tree accuracy:", round(tree_acc * 100, 2), "%")
+
+print("\nExtracted rules from tree:")
+rules = export_text(tree, feature_names=feature_names)
+print(rules)
