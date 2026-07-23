@@ -25,3 +25,24 @@ to decide which class something belongs to.
 > learned automatically from data.
 
 ---
+
+## 🔑 How it Works
+
+### Manual Rules
+- Domain experts write the rules
+- Like a doctor writing diagnosis rules
+- Easy to understand and explain
+- But hard to scale with many features
+
+### Learned Rules (from Decision Tree)
+- Train a decision tree
+- Extract rules from each path root to leaf
+- Each path becomes one rule
+- More scalable than manual rules
+
+### Rule Format
+IF condition1 AND condition2 THEN class
+Example:
+IF income > 50000 AND credit_score > 700
+THEN approve loan
+
