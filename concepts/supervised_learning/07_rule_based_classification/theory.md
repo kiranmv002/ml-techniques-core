@@ -46,3 +46,26 @@ Example:
 IF income > 50000 AND credit_score > 700
 THEN approve loan
 
+---
+
+## 📌 Key Terms
+
+| Term | Meaning | Example |
+|------|---------|---------|
+| Rule | If then statement | IF age > 18 THEN adult |
+| Condition | Part of the rule | age > 18 |
+| Antecedent | The IF part | IF income > 50000 |
+| Consequent | The THEN part | THEN approve |
+| Coverage | How many samples rule applies to | 30 out of 100 |
+| Accuracy | How often rule is correct | 90% correct |
+
+---
+
+## 💡 Why It Matters
+- Very easy to explain to non technical people
+- Used in medical diagnosis and fraud detection
+- Rules can be validated by domain experts
+- No black box - you know exactly why a decision was made
+- But does not scale well to complex problems
+
+---
