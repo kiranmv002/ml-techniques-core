@@ -87,3 +87,21 @@ print("Decision tree accuracy:", round(tree_acc * 100, 2), "%")
 print("\nExtracted rules from tree:")
 rules = export_text(tree, feature_names=feature_names)
 print(rules)
+
+
+# ── Step 4: Extract Rules as If Then Statements
+print("\n--- Rules in Simple English ---")
+
+# manually reading key paths from the tree
+# and writing them as human readable rules
+print("Rule A: IF humidity <= 82 AND wind_speed <= 21")
+print("        THEN Play")
+print()
+print("Rule B: IF humidity > 82 AND weather = rainy")
+print("        THEN Dont Play")
+print()
+print("Rule C: IF wind_speed > 21")
+print("        THEN Dont Play")
+print()
+print("Rule D: IF weather = cloudy AND humidity <= 88")
+print("        THEN Play")
