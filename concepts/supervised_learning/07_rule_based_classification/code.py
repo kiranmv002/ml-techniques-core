@@ -105,3 +105,32 @@ print("        THEN Dont Play")
 print()
 print("Rule D: IF weather = cloudy AND humidity <= 88")
 print("        THEN Play")
+
+
+# ── Step 5: Compare Manual vs Learned Rules ──
+print("\n--- Comparison ---")
+print(f"Manual Rules Accuracy : {round(manual_acc * 100, 2)}%")
+print(f"Decision Tree Accuracy: {round(tree_acc  * 100, 2)}%")
+
+
+# ── Step 6: Sample Prediction ────────────────
+print("\n--- Sample Prediction ---")
+
+# using manual rules
+test_day = {"weather": "sunny", "temperature": "mild",
+            "humidity": 68, "wind_speed": 12, "play": 1}
+test_series = pd.Series(test_day)
+manual_result = manual_rules(test_series)
+
+print("Day: sunny, mild, humidity=68, wind=12")
+print("Manual rule says:", "Play ✅" if manual_result == 1 else "Dont Play ❌")
+
+# using tree
+test_encoded = np.array([[
+    le_weather.transform(["sunny"])[0],
+    le_temp.transform(["mild"])[0],
+    68,
+    12
+]])
+tree_result = tree.predict(test_encoded)[0]
+print("Decision tree says:", "Play ✅" if tree_result == 1 else "Dont Play ❌")
