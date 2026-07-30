@@ -134,3 +134,33 @@ test_encoded = np.array([[
 ]])
 tree_result = tree.predict(test_encoded)[0]
 print("Decision tree says:", "Play ✅" if tree_result == 1 else "Dont Play ❌")
+
+
+# ── Visualization ─────────────────────────────
+fig, axes = plt.subplots(1, 3, figsize=(14, 4))
+
+# weather vs play
+weather_play = df.groupby(["weather", "play"]).size().unstack(fill_value=0)
+weather_play.plot(kind="bar", ax=axes[0],
+                  color=["tomato", "seagreen"], alpha=0.8)
+axes[0].set_title("Weather vs Play Decision")
+axes[0].set_xlabel("Weather")
+axes[0].set_ylabel("Count")
+axes[0].set_xticklabels(axes[0].get_xticklabels(), rotation=0)
+axes[0].legend(["Dont Play", "Play"])
+
+# humidity vs play
+axes[1].scatter(df[df["play"] == 1]["humidity"],
+                df[df["play"] == 1]["wind_speed"],
+                color="seagreen", label="Play", alpha=0.6)
+axes[1].scatter(df[df["play"] == 0]["humidity"],
+                df[df["play"] == 0]["wind_speed"],
+                color="tomato", label="Dont Play", alpha=0.6)
+axes[1].axvline(x=82, color="black",
+                linestyle="--", label="humidity=82")
+axes[1].axhline(y=21, color="blue",
+                linestyle="--", label="wind=21")
+axes[1].set_xlabel("Humidity")
+axes[1].set_ylabel("Wind Speed")
+axes[1].set_title("Rules Visualized\n(Decision Boundaries)")
+axes[1].legend(fontsize=7)
