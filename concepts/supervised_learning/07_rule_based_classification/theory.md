@@ -69,3 +69,9 @@ THEN approve loan
 - But does not scale well to complex problems
 
 ---
+
+## ✅ Check Yourself Before Code
+- [ ] What is the difference between manual and learned rules?
+- [ ] What is rule coverage?
+- [ ] When would you prefer rule based over other algorithms?
+- [ ] How do you extract rules from a decision tree?
