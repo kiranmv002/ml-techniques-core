@@ -164,3 +164,35 @@ axes[1].set_xlabel("Humidity")
 axes[1].set_ylabel("Wind Speed")
 axes[1].set_title("Rules Visualized\n(Decision Boundaries)")
 axes[1].legend(fontsize=7)
+
+# accuracy comparison
+models = ["Manual Rules", "Decision Tree"]
+accs = [manual_acc * 100, tree_acc * 100]
+axes[2].bar(models, accs,
+            color=["steelblue", "seagreen"], alpha=0.8)
+axes[2].set_ylabel("Accuracy %")
+axes[2].set_title("Manual vs Learned Rules")
+axes[2].set_ylim([0, 110])
+for i, v in enumerate(accs):
+    axes[2].text(i, v + 1, str(round(v, 1)) + "%",
+                 ha="center", fontsize=11)
+
+plt.tight_layout()
+plt.savefig("rule_based_classification.png")
+plt.show()
+print("\nPlot saved!")
+
+
+print("""
+==============================
+KEY TAKEAWAYS
+==============================
+- Rules are simple if then else statements
+- Manual rules need domain expert knowledge
+- Learned rules come from decision tree paths
+- Rules are very easy to explain to anyone
+- Good for medical legal and finance decisions
+- Does not scale well to very complex problems
+- Always compare manual vs learned rule accuracy
+==============================
+""")
