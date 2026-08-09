@@ -49,3 +49,31 @@ You need to know the reason behind it.
 - Works for any ML model
 
 ---
+
+## 📌 Key Terms
+
+| Term | Meaning | Example |
+|------|---------|---------|
+| Interpretability | Understanding why model predicted | Why did loan get rejected |
+| Feature importance | How much each feature contributed | Salary importance = 0.35 |
+| Global explanation | Overall model behavior | Top features for all predictions |
+| Local explanation | One specific prediction | Why this employee will leave |
+| Black box | Model we cannot explain | Deep neural network |
+| White box | Model we can explain | Linear regression decision tree |
+
+---
+
+## 💡 Why It Matters
+- Builds trust in the model
+- Required in finance health and legal domains
+- Helps debug wrong predictions
+- Helps improve the model by removing useless features
+- Regulators often require explainability
+
+---
+
+## ✅ Check Yourself Before Code
+- [ ] What is the difference between global and local explanation?
+- [ ] Which models are naturally interpretable?
+- [ ] Why is interpretability important in medical ML?
+- [ ] What does feature importance score of 0 mean?
