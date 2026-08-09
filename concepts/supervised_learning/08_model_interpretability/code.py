@@ -123,3 +123,22 @@ top_features = np.argsort(rf_importance)[::-1][:3]
 print("\nTop 3 reasons for prediction:")
 for rank, idx in enumerate(top_features, 1):
     print(f"  {rank}. {feature_names[idx]} = {sample[0][idx]}")
+
+
+# ── Visualization ─────────────────────────────
+fig, axes = plt.subplots(1, 3, figsize=(14, 4))
+
+# logistic regression coefficients
+coefs = lr.coef_[0]
+colors = ["tomato" if c > 0 else "steelblue" for c in coefs]
+axes[0].barh(feature_names, coefs, color=colors, alpha=0.8)
+axes[0].axvline(x=0, color="black", linestyle="--")
+axes[0].set_xlabel("Coefficient")
+axes[0].set_title("Logistic Regression\nCoefficients")
+
+# decision tree feature importance
+axes[1].barh(feature_names, dt_importance,
+             color="seagreen", alpha=0.8)
+axes[1].set_xlabel("Importance")
+axes[1].set_title("Decision Tree\nFeature Importance")
+
