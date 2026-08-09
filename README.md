@@ -28,39 +28,54 @@ Each topic has **3 things:**
 ml-techniques-core/
 │
 ├── concepts/
-│   │
-│   ├── fundamentals/
-│   │   ├── 01_exploring_data/
-│   │   │   ├── theory.md
-│   │   │   ├── code.py
-│   │   │   └── data/iris.csv
-│   │   ├── 02_learning_paradigms/
-│   │   │   ├── theory.md
-│   │   │   ├── code.py
-│   │   │   └── data/learning_paradigms.csv
-│   │   ├── 03_data_representation/
-│   │   │   ├── theory.md
-│   │   │   ├── code.py
-│   │   │   └── data/students.csv
-│   │   ├── 04_model_representation/
-│   │   │   ├── theory.md
-│   │   │   ├── code.py
-│   │   │   └── data/house_prices.csv
-│   │   ├── 05_train_val_test/
-│   │   │   ├── theory.md
-│   │   │   ├── code.py
-│   │   │   └── data/exam_scores.csv
-│   │   └── 06_data_preprocessing/
-│   │       ├── theory.md
-│   │       ├── code.py
-│   │       └── data/raw_patients.csv
-│   │
-│   ├── supervised_learning/
-│   │   ├── 01_problem_formulation/
-│   │   │   ├── theory.md
-│   │   │   ├── code.py
-│   │   │   └── data/problems.csv
-
+│ │
+│ ├── fundamentals/
+│ │ ├── 01_exploring_data/
+│ │ │ ├── theory.md
+│ │ │ ├── code.py
+│ │ │ └── data/iris.csv
+│ │ ├── 02_learning_paradigms/
+│ │ │ ├── theory.md
+│ │ │ ├── code.py
+│ │ │ └── data/learning_paradigms.csv
+│ │ ├── 03_data_representation/
+│ │ │ ├── theory.md
+│ │ │ ├── code.py
+│ │ │ └── data/students.csv
+│ │ ├── 04_model_representation/
+│ │ │ ├── theory.md
+│ │ │ ├── code.py
+│ │ │ └── data/house_prices.csv
+│ │ ├── 05_train_val_test/
+│ │ │ ├── theory.md
+│ │ │ ├── code.py
+│ │ │ └── data/exam_scores.csv
+│ │ └── 06_data_preprocessing/
+│ │ ├── theory.md
+│ │ ├── code.py
+│ │ └── data/raw_patients.csv
+│ │
+│ ├── supervised_learning/
+│ │ ├── 01_problem_formulation/
+│ │ │ ├── theory.md
+│ │ │ ├── code.py
+│ │ │ └── data/problems.csv
+│ │ ├── 02_linear_regression/
+│ │ │ ├── theory.md
+│ │ │ ├── code.py
+│ │ │ └── data/house_sales.csv
+│ │ ├── 03_multiple_linear_regression/
+│ │ │ ├── theory.md
+│ │ │ ├── code.py
+│ │ │ └── data/car_prices.csv
+│ │ ├── 04_overfit_underfit/
+│ │ │ ├── theory.md
+│ │ │ ├── code.py
+│ │ │ └── data/student_performance.csv
+│ │ ├── 05_logistic_regression/
+│ │ │ ├── theory.md
+│ │ │ ├── code.py
+│ │ │ └── data/diabetes.csv
 ```
 ---
 
