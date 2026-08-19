@@ -142,3 +142,29 @@ axes[1].barh(feature_names, dt_importance,
 axes[1].set_xlabel("Importance")
 axes[1].set_title("Decision Tree\nFeature Importance")
 
+# random forest feature importance
+axes[2].barh(feature_names, rf_importance,
+             color="purple", alpha=0.8)
+axes[2].set_xlabel("Importance")
+axes[2].set_title("Random Forest\nFeature Importance")
+
+plt.tight_layout()
+plt.savefig("model_interpretability.png")
+plt.show()
+print("\nPlot saved!")
+
+
+print("""
+==============================
+KEY TAKEAWAYS
+==============================
+- Interpretability = understanding WHY
+- Logistic regression : use coefficients
+- Decision tree       : use rules and importance
+- Random forest       : use feature importance
+- Satisfaction and salary are top factors
+- Low satisfaction = high chance of leaving
+- High work hours = higher chance of leaving
+- Always explain predictions in business context
+==============================
+""")
