@@ -76,6 +76,11 @@ ml-techniques-core/
 │ │ │ ├── theory.md
 │ │ │ ├── code.py
 │ │ │ └── data/diabetes.csv
+│ │ ├── 06_decision_tree/
+│ │ │ ├── theory.md
+│ │ │ ├── code.py
+│ │ │ └── data/loan_approval.csv
+
 ```
 ---
 
