@@ -83,7 +83,7 @@ ml-techniques-core/
 │ │ ├── 07_rule_based_classification/
 │ │ │ ├── theory.md
 │ │ │ ├── code.py
-│ │ │ └── data/loan_approval.csv
+│ │ │ └── data/weather.csv
 
 ```
 ---
