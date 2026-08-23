@@ -80,6 +80,10 @@ ml-techniques-core/
 │ │ │ ├── theory.md
 │ │ │ ├── code.py
 │ │ │ └── data/loan_approval.csv
+│ │ ├── 07_rule_based_classification/
+│ │ │ ├── theory.md
+│ │ │ ├── code.py
+│ │ │ └── data/loan_approval.csv
 
 ```
 ---
