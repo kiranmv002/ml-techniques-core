@@ -86,8 +86,6 @@ ml-techniques-core/
 │ │ │ └── data/weather.csv
 │ │ ├── 
 │ │ │ ├── theory.md
-│ │ │ ├── code.py
-│ │ │ └── data/weather.csv
 
 ```
 ---
