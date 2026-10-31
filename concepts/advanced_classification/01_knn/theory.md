@@ -68,3 +68,10 @@ Return the winning class as prediction.
 - But slow at prediction time for large datasets
 - Sensitive to irrelevant features and scaling
 
+---
+
+## ✅ Check Yourself Before Code
+- [ ] Why do we need to scale data before KNN?
+- [ ] What happens if K is too small?
+- [ ] What happens if K is too large?
+- [ ] What is the difference between Euclidean and Manhattan distance?
