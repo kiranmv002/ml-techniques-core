@@ -27,3 +27,25 @@ uses it at prediction time.
 > Majority vote = 5 out of 7 had diabetes
 
 ---
+
+## 🔑 How it Works
+
+### Step 1
+Calculate distance from new point to all training points.
+Usually uses Euclidean distance.
+distance = sqrt((x2-x1)² + (y2-y1)²)
+
+### Step 2
+Sort all training points by distance.
+Pick the K closest ones.
+
+### Step 3
+For classification: majority vote wins.
+For regression: take average of K neighbors.
+
+### Step 4
+Return the winning class as prediction.
+
+---
+
+## 📌 Key Terms
