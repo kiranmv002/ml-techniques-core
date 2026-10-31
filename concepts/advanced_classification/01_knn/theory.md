@@ -57,3 +57,14 @@ Return the winning class as prediction.
 | Majority vote | Most common class wins | 4 out of 5 = diabetes |
 | Lazy learner | No training phase | KNN memorizes all data |
 | Curse of dimensionality | KNN fails with too many features | 100+ features |
+
+---
+
+## 💡 Why It Matters
+- Very simple and easy to understand
+- No training time needed
+- Good for small datasets
+- Works for both classification and regression
+- But slow at prediction time for large datasets
+- Sensitive to irrelevant features and scaling
+
