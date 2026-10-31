@@ -49,3 +49,11 @@ Return the winning class as prediction.
 ---
 
 ## 📌 Key Terms
+
+| Term | Meaning | Example |
+|------|---------|---------|
+| K | Number of neighbors to look at | K=5 |
+| Distance | How far two points are | Euclidean Manhattan |
+| Majority vote | Most common class wins | 4 out of 5 = diabetes |
+| Lazy learner | No training phase | KNN memorizes all data |
+| Curse of dimensionality | KNN fails with too many features | 100+ features |
